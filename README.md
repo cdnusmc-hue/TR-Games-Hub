@@ -8,9 +8,11 @@ Players enter because the game is enjoyable, continue because the decisions are 
 
 ## Current focus
 
-**One More Shift — Festival Finish** is the lead prototype. It is in pre-production; this repository does not yet contain a playable game. The numerical scenario and interaction map are ready for review before implementation.
+**One More Shift — Festival Finish** is now a complete first playable prototype (v0.3.0), awaiting human playtesting.
 
-The first build will include 18 crew, three linked operating areas, a machine failure and a late rush in a six-minute strategy scenario, with tactical pause and instant rematch.
+**[Play/download instructions](games/one-more-shift/README.md)** — download the single `play.html` and open it in a browser. No installation or server required.
+
+The playable build includes 18 crew, three linked operating areas, a machine failure and a late rush in a six-minute strategy scenario, with tactical pause and instant rematch.
 
 ## Project documents
 
@@ -18,6 +20,7 @@ The first build will include 18 crew, three linked operating areas, a machine fa
 - [Portfolio map and all 24 concept rankings](docs/portfolio-map.md)
 - [Phased roadmap](docs/roadmap.md)
 - [Complete pre-production package](docs/TR_Games_Hub_Preproduction_v0.1.md)
+- [Implementation and verification v0.3](games/one-more-shift/docs/implementation-v0.3.md)
 - [Current One More Shift design v0.2](games/one-more-shift/docs/design-v0.2.md)
 - [Numerical balance worksheet](games/one-more-shift/docs/balance-v0.2.md)
 - [Prototype brief](games/one-more-shift/docs/prototype-brief.md)
@@ -26,10 +29,9 @@ The complete package preserves the portfolio v0.1 baseline. One More Shift desig
 
 ## Development sequence
 
-1. Implement and verify the deterministic simulation.
-2. Build the visible, interactive workshop board.
-3. Finish a complete playable shift and rematch.
-4. Observe player clarity, strategy variety and voluntary replay before expanding.
+1. Simulation, workshop board, full shift and rematch implemented.
+2. Fifteen simulation tests and an end-to-end Chromium check pass.
+3. Next: observe player clarity, strategy variety and voluntary replay before expanding.
 
 Only one game is in active development at a time. Trash Panda Heist and Payday to Payday are secondary opportunities; remaining concepts stay as structured briefs.
 

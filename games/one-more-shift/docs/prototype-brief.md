@@ -1,6 +1,6 @@
 # One More Shift — Festival Finish prototype brief
 
-Current design: **v0.2**, pre-production. No playable build or game source implementation exists.
+Current design: **v0.2**, implemented as playable prototype **v0.3.0**. See [play instructions](../README.md) and [implementation evidence](implementation-v0.3.md).
 
 Read [scope, scenario and interaction map](design-v0.2.md) for authoritative rules and [balance worksheet](balance-v0.2.md) for the numerical comparisons. The original lead-game section in the portfolio v0.1 package is historical.
 
@@ -25,4 +25,4 @@ No hiring/payroll, construction, complex products, character skill trees, campai
 
 ## Next gate
 
-Review the v0.2 experience and scope before leaving pre-production. Implementation then tests deterministic correctness, numerical balance and complete play; player testing determines whether the choices are entertaining.
+Implementation and automated verification are complete. The next gate is human playtesting: determine whether decisions, feedback and replay are entertaining.

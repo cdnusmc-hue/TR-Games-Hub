@@ -1,6 +1,6 @@
 # Development roadmap
 
-**Current lead-game scope:** [One More Shift v0.2](../games/one-more-shift/docs/design-v0.2.md). Pre-code numerical comparison and interaction mapping are complete; implementation waits for the user to conclude scope review. The original phase table below is the portfolio baseline.
+**Current lead-game scope:** [One More Shift v0.2](../games/one-more-shift/docs/design-v0.2.md). Pre-code mapping, simulation, playable board, full shift and rematch are complete in [v0.3](../games/one-more-shift/docs/implementation-v0.3.md). Next: human playtesting. The original phase table below is the portfolio baseline.
 
 ## 8. Phased development roadmap
 One active game build at a time. Effort ranges below are rough focused maker-days, not promises or calendar commitments; art, iteration and tooling experience can materially change them.

@@ -1,6 +1,6 @@
 # One More Shift — scope, scenario and interaction map v0.2
 
-Date: September 30, 2026. Status: pre-production; no playable build or game source implementation.
+Date: September 30, 2026. Status: design baseline, now implemented in [playable prototype v0.3](implementation-v0.3.md). Current tuning differences and verification are documented there.
 
 This is the current lead-game design. It supersedes the One More Shift scenario, scoring and control assumptions in the portfolio's v0.1 package. The portfolio philosophy and rankings remain the baseline; they have not been revalidated. Numerical rules here are provisional. One-minute worksheet arithmetic demonstrates feasible plans under these assumptions, not entertainment, optimality or final real-time balance.
 
@@ -191,6 +191,6 @@ These player targets are planning thresholds, not statistical proof or claims of
 
 ## Decision gate reached
 
-**Pre-code scope is concrete and reviewable.** The next activity is implementation only after the user agrees to leave pre-production. There is no missing account, tool, framework or story decision blocking a build. The unresolved question is whether these choices feel enjoyable, which requires a playable test.
+**Pre-code scope was approved and implemented.** The next activity is human playtesting of the complete prototype. There is no missing account, tool, framework or story decision blocking a build. The unresolved question is whether these choices feel enjoyable, which requires a playable test.
 
 Review the actual experience: fixed top-down miniature workshop, group-first controls, two shared technicians, explicit 0/6/12 rush choice, no combined score, and one six-minute scenario. Accepting this boundary authorizes implementing and testing that prototype; it does not imply full-game production or release.
