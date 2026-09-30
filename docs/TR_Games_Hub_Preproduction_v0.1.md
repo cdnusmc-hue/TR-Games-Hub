@@ -1,6 +1,8 @@
 # TR Games Hub — pre-production and portfolio map v0.1
 Date: September 30, 2026
-Status: design hypotheses and prototype brief; no game implementation or player validation completed.
+Status: portfolio v0.1 baseline; no game implementation or player validation completed.
+
+**Lead-game update:** [One More Shift design v0.2](../games/one-more-shift/docs/design-v0.2.md) supersedes the scenario, controls and scoring rules in this document. Its [balance worksheet](../games/one-more-shift/docs/balance-v0.2.md) records the pre-code numerical comparisons. Other portfolio concepts retain their v0.1 opportunity briefs.
 
 ## Decision brief
 TR Games Hub makes entertaining games about consequential choices. Thinking Reimagined's mission—amplify human judgment while preserving human agency—is a design constraint, not an educational marketing requirement. Players come for satisfying play, stay for interesting decisions, and develop judgment through visible consequences and experimentation.

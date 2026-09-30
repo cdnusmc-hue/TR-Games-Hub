@@ -8,7 +8,7 @@ Players enter because the game is enjoyable, continue because the decisions are 
 
 ## Current focus
 
-**One More Shift — Festival Finish** is the lead prototype. It is in pre-production; this repository does not yet contain a playable game.
+**One More Shift — Festival Finish** is the lead prototype. It is in pre-production; this repository does not yet contain a playable game. The numerical scenario and interaction map are ready for review before implementation.
 
 The first build will include 18 crew, three linked operating areas, a machine failure and a late rush in a six-minute strategy scenario, with tactical pause and instant rematch.
 
@@ -18,9 +18,11 @@ The first build will include 18 crew, three linked operating areas, a machine fa
 - [Portfolio map and all 24 concept rankings](docs/portfolio-map.md)
 - [Phased roadmap](docs/roadmap.md)
 - [Complete pre-production package](docs/TR_Games_Hub_Preproduction_v0.1.md)
-- [One More Shift prototype brief](games/one-more-shift/docs/prototype-brief.md)
+- [Current One More Shift design v0.2](games/one-more-shift/docs/design-v0.2.md)
+- [Numerical balance worksheet](games/one-more-shift/docs/balance-v0.2.md)
+- [Prototype brief](games/one-more-shift/docs/prototype-brief.md)
 
-The complete package is the authoritative v0.1 baseline; focused documents are extracts for convenience. Update them together when the design changes.
+The complete package preserves the portfolio v0.1 baseline. One More Shift design v0.2 is authoritative for its current scope and scenario; it supersedes the lead-game rules in v0.1. The other concepts remain opportunity briefs.
 
 ## Development sequence
 
