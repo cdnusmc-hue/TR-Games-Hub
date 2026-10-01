@@ -1,5 +1,7 @@
 # Development roadmap
 
+**Trifecta direction (2026-10-01):** One More Shift → Payday to Payday → Trash Panda Heist. Payday [scope v0.1](../games/payday-to-payday/docs/scope-v0.1.md) is complete; card-level content and paper balance precede code. One More Shift needs independent clarity/fun testing; Trash Panda needs its own bounded pre-production. Build small testable games sequentially and roll out a comparison set once each teaches itself. This supersedes the original deferred second-prototype choice below.
+
 **Current lead-game scope:** [One More Shift v0.2](../games/one-more-shift/docs/design-v0.2.md). Pre-code mapping, simulation, playable board, full shift and rematch are complete in [v0.3](../games/one-more-shift/docs/implementation-v0.3.md). Next: human playtesting. The original phase table below is the portfolio baseline.
 
 ## 8. Phased development roadmap
