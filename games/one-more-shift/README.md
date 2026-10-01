@@ -29,3 +29,8 @@ The build artifact is committed so downloading one file is enough to play. Regen
 - [Implementation notes and current balance](docs/implementation-v0.3.md)
 
 The current simulation uses 1/60-shift-minute steps and a Dispatch rate of 0.32 items per worker/minute. The older coarse worksheet uses 0.30 and remains historical evidence, not an exact forecast of this implementation.
+
+## In-game instructions
+The opening How to play guide explains the goal, automatic production, queues, station rates, identical product processing, technicians, energy, priorities and rush commitments. Practice one crew move highlights source selection, selecting two ordinary crew, the destination and starting the clock; it pauses again on arrival. The practice changes the real shift and is optional. Reopen How to play anytime.
+
+Onboarding update validation: all 15 simulation tests and JavaScript syntax check pass. Browser integration could not run because the available Chromium executable crashed at launch; the revised walkthrough still needs a manual browser check.

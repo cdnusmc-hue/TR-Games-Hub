@@ -3,12 +3,20 @@
 const E=globalThis.OMS,$=id=>document.getElementById(id);
 let state=E.create(),selected=new Set(),area='G',slow=false,sound=false,context=null,acc=0,last=performance.now(),logCount=0,resultShown=false;
 const tokens=new Map(),orders=new Map();
+let practice=0,practiceIds=[];
+function coach(){
+ document.querySelectorAll(".tutorial-target").forEach(n=>n.classList.remove("tutorial-target"));
+ $("coach").hidden=!practice;if(!practice)return;
+ const steps={1:["1 / 4 · Select a source","Click Select crew under Gather. The clock stays paused while you make this move.",'[data-group="G"]'],2:["2 / 4 · Choose two people","Click 2 ordinary in YOUR MOVE. Technicians are selected separately for repairs.","#select-two"],3:["3 / 4 · Choose a destination","Click Send selected here under Assemble. This is a real move: two crew will travel for one shift minute.",'[data-dest="A"]'],4:["4 / 4 · Watch them arrive","Click Start shift. Watch ON THE WAY: after one shift minute your two crew join Assemble. This is just a control demonstration, not a required winning strategy.","#pause"],5:["Move complete · Now make your own plan","Your crew arrived. The clock is paused so you can inspect the queues. Resume when ready; reopen How to play anytime.","#pause"]};
+ const [title,copy,target]=steps[practice];$("coach-title").textContent=title;$("coach-copy").textContent=copy;document.querySelector(target)?.classList.add("tutorial-target");
+}
+
 const fmt=n=>{const seconds=Math.max(0,Math.ceil(n*60-1e-6));return `${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')}`;};
 function toast(message,error=false){$('toast').textContent=message;document.querySelector('.command-bar').classList.toggle('error',error);}
 function ping(){if(!sound)return;try{context=context||new (window.AudioContext||window.webkitAudioContext)();context.resume();const o=context.createOscillator(),g=context.createGain();o.type='sine';o.frequency.setValueAtTime(440,context.currentTime);o.frequency.exponentialRampToValueAtTime(660,context.currentTime+.13);g.gain.setValueAtTime(.035,context.currentTime);g.gain.exponentialRampToValueAtTime(.001,context.currentTime+.25);o.connect(g);g.connect(context.destination);o.start();o.stop(context.currentTime+.26);}catch{}}
 function select(ids){selected=new Set(ids);render();}
 function ordinary(n){select(E.groups(state,area).filter(w=>!w.tech&&!w.forcedRest).slice(0,n).map(w=>w.id));}
-function reset(){state=E.create();selected.clear();acc=0;logCount=0;resultShown=false;for(const d of document.querySelectorAll('dialog'))d.close();toast('Fresh shift. Same workshop. A different plan?');render();}
+function reset(){state=E.create();practice=0;practiceIds=[];selected.clear();acc=0;logCount=0;resultShown=false;for(const d of document.querySelectorAll('dialog'))d.close();toast('Fresh shift. Same workshop. A different plan?');render();}
 function showResults(){if(resultShown)return;resultShown=true;const r=E.result(state),all=r.onTime===r.commitments;
  $('result-heading').textContent=all?'You pulled it off.':'A shift worth another shot.';
  $('result-copy').textContent=all?'Every promise kept. What would you change to give your crew an easier finish?':'Some promises slipped. The next run is a chance to test a different recovery plan.';
@@ -19,6 +27,8 @@ function showResults(){if(resultShown)return;resultShown=true;const r=E.result(s
  $('results').showModal();ping();
 }
 function render(){
+ if(practice===4&&practiceIds.length&&practiceIds.every(id=>state.crew[id].location==='A')){practice=5;state.paused=true;acc=0;}
+ coach();
  document.body.classList.toggle('paused',state.paused);
  $('clock').textContent=fmt(45-state.time);$('pause').textContent=state.ended?'Shift complete':state.paused?(state.time?'Resume ▷':'Start shift ▷'):'Pause Ⅱ';$('pause').disabled=state.ended;
  $('pace').textContent=slow?'Slower pace':'Normal pace';$('board-status').textContent=state.ended?'Shift complete':state.paused?'Paused · make your plan':'Live · follow the flow';
@@ -47,12 +57,14 @@ function render(){
  if(state.rushOffered&&state.rushChoice===null&&state.time===10&&!$('rush-dialog').open&&!state.rushSeen){state.rushSeen=true;$('rush-dialog').showModal();}
  if(state.ended)showResults();
 }
-for(const b of document.querySelectorAll('[data-group]'))b.addEventListener('click',()=>{area=b.dataset.group;ordinary(18);toast(`Ordinary crew in ${E.label(area)} selected. Technicians are selected separately.`);});
-for(const b of document.querySelectorAll('[data-dest]'))b.addEventListener('click',()=>{const to=b.dataset.dest;const removing=state.crew.some(w=>selected.has(w.id)&&w.tech&&w.location==='R'&&to!=='R'&&state.machine==='broken'&&state.repairActive);if(removing&&!confirm('Moving a technician will pause the repair. Move them anyway?'))return;const result=E.assign(state,[...selected],to);toast(result.message,!result.ok);if(result.ok)selected.clear();render();});
+for(const b of document.querySelectorAll('[data-group]'))b.addEventListener('click',()=>{area=b.dataset.group;if(practice===1&&area==='G')practice=2;ordinary(18);toast(`Ordinary crew in ${E.label(area)} selected. Technicians are selected separately.`);});
+for(const b of document.querySelectorAll('[data-dest]'))b.addEventListener('click',()=>{const to=b.dataset.dest;const removing=state.crew.some(w=>selected.has(w.id)&&w.tech&&w.location==='R'&&to!=='R'&&state.machine==='broken'&&state.repairActive);if(removing&&!confirm('Moving a technician will pause the repair. Move them anyway?'))return;const moved=[...selected];const result=E.assign(state,moved,to);if(result.ok&&practice===3&&to==='A'&&moved.length===2){practiceIds=moved;practice=4;}toast(result.message,!result.ok);if(result.ok)selected.clear();render();});
 document.querySelector('[data-tech]').addEventListener('click',()=>select(state.crew.filter(w=>w.tech&&w.location!=='T').map(w=>w.id)));
-$('select-one').onclick=()=>ordinary(1);$('select-two').onclick=()=>ordinary(2);$('select-all').onclick=()=>ordinary(18);$('clear').onclick=()=>select([]);
+$('select-one').onclick=()=>ordinary(1);$('select-two').onclick=()=>{if(practice===2&&area==='G')practice=3;ordinary(2);};$('select-all').onclick=()=>ordinary(18);$('clear').onclick=()=>select([]);
 function toggle(){if(state.ended)return;state.paused=!state.paused;acc=0;render();}
 $('pause').onclick=toggle;$('pace').onclick=()=>{slow=!slow;acc=0;render();};
+$('practice').onclick=()=>{state.paused=true;acc=0;$('welcome').close();if(E.groups(state,'G').filter(w=>!w.tech&&!w.forcedRest).length>=2){practice=1;selected.clear();render();$('coach').scrollIntoView({block:'nearest'});}else{toast('Practice needs two available Gather crew. Use the guide to move your current crew, or restart for a fresh practice.');render();}};
+$('coach-skip').onclick=()=>{practice=0;render();};
 $('begin').onclick=()=>{$('welcome').close();state.paused=false;acc=0;render();};$('intro-slow').onclick=()=>{slow=true;$('intro-slow').textContent='Slower pace selected ✓';render();};
 $('help').onclick=()=>{state.paused=true;acc=0;$('welcome').showModal();render();};
 for(const b of document.querySelectorAll('[data-rush]'))b.onclick=()=>{if(E.chooseRush(state,+b.dataset.rush)){$('rush-dialog').close();toast('Commitment set. Resume when you’re ready.');render();}};
