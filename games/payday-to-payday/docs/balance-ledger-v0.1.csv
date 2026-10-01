@@ -1,0 +1,54 @@
+strategy,day,item,change,balance
+balanced,1,"Cook for the week",-35,385
+balanced,1,"Work an extra shift",70,455
+balanced,2,"Rent · week 1",-300,155
+balanced,3,"Meet Jo for cake",-25,130
+balanced,5,"Buy an inspection",-30,100
+balanced,5,"Repair the diagnosed fault",-60,40
+balanced,6,"Phone",-40,0
+balanced,8,"Paycheck",720,720
+balanced,8,"Cook for the week",-35,685
+balanced,9,"Rent · week 2",-300,385
+balanced,13,"Transit upkeep",-60,325
+balanced,15,"Cook for the week",-35,290
+balanced,20,"Utilities",-100,190
+balanced,22,"Paycheck",720,910
+balanced,22,"Rent · week 3 · overdue settled",-315,595
+balanced,22,"Cook for the week",-35,560
+balanced,23,"Rent · week 4",-300,260
+balanced,24,"Host the little gathering",-100,160
+recovery,1,"Buy convenient meals",-70,350
+recovery,1,"Work an extra shift",70,420
+recovery,2,"Rent · week 1",-300,120
+recovery,6,"Phone",-40,80
+recovery,8,"Paycheck",720,800
+recovery,8,"Buy convenient meals",-70,730
+recovery,8,"Bring the lamp home",-80,650
+recovery,9,"Rent · week 2",-300,350
+recovery,13,"Transit upkeep",-60,290
+recovery,14,"Repair the bike now",-120,170
+recovery,15,"Cook for the week",-35,135
+recovery,17,"Take the $90 shift",90,225
+recovery,20,"Utilities",-100,125
+recovery,22,"Paycheck",720,845
+recovery,22,"Rent · week 3 · overdue settled",-315,530
+recovery,22,"Buy convenient meals",-70,460
+recovery,23,"Rent · week 4",-300,160
+recovery,24,"Begin the creative course",-160,0
+spending,1,"Buy convenient meals",-70,350
+spending,2,"Rent · week 1",-300,50
+spending,3,"Meet Jo for cake",-25,25
+spending,8,"Paycheck",720,745
+spending,8,"Phone · overdue settled",-55,690
+spending,8,"Buy convenient meals",-70,620
+spending,8,"Bring the lamp home",-80,540
+spending,9,"Rent · week 2",-300,240
+spending,13,"Transit upkeep",-60,180
+spending,14,"Repair the bike now",-120,60
+spending,17,"Take the $90 shift",90,150
+spending,20,"Utilities",-100,50
+spending,22,"Paycheck",720,770
+spending,22,"Rent · week 3 · overdue settled",-315,455
+spending,22,"Buy convenient meals",-70,385
+spending,23,"Rent · week 4",-300,85
+spending,26,"Offer $20 for delivery",-20,65

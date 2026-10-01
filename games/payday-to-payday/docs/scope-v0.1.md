@@ -1,6 +1,6 @@
 # Payday to Payday — scope and opportunity map v0.1
 
-Status: pre-production proposal; no game code, financial data integration or market validation. This document is the build direction, not a claim that the loop is already fun. Fictional dollars and rules serve this scenario, not financial advice or local cost estimates.
+Status: original pre-production scope, now implemented by [playable v0.1](implementation-v0.1.md). The implementation document records rule clarifications and validation. No financial data integration or market validation. This document is the build direction, not a claim that the loop is already fun. Fictional dollars and rules serve this scenario, not financial advice or local cost estimates.
 
 ## Product promise
 Live a month worth remembering without running out of options before the next payday. A warm, humorous, turn-based life strategy game where money buys possibilities, time makes them happen, and recovery keeps them available. Players should want to see what happens next and replay a different life strategy.
